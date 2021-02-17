@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// eslint-disable-next-line import/no-anonymous-default-export
-export default (initialVal) => {
+function useInputState(initialVal) {
   const [value, setValue] = useState(initialVal);
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -9,4 +8,6 @@ export default (initialVal) => {
     setValue('');
   };
   return [value, handleChange, reset];
-};
+}
+
+export default useInputState;
